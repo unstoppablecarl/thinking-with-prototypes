@@ -1,0 +1,43 @@
+
+.highlight {
+    color: #7F9F7F;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.reveal blockquote {
+    padding: 0.25em 0.5em;
+    width: 100%;
+}
+
+.text-muted {
+    color: #777;
+}
+
+.reveal pre {
+    width: 98%;
+}
+.strike {
+    /*color: #CC9393;*/
+    color: #9f3939;
+    /*text-decoration: line-through;*/
+      position: relative;
+
+}
+
+.strike:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  right: 0;
+  border-top: 3px solid red;
+
+  transform:rotate(-10deg);
+}
