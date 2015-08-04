@@ -1,5 +1,6 @@
 
-.highlight {
+.reveal .highlight,
+.reveal .text-green {
     color: #7F9F7F;
 }
 
@@ -16,19 +17,24 @@
     width: 100%;
 }
 
-.text-muted {
+.reveal .text-red {
+    color: #9F3939;
+}
+.reveal .text-orange {
+    color: #9E763B;
+}
+.reveal .text-muted {
     color: #777;
 }
 
 .reveal pre {
     width: 98%;
 }
-.strike {
-    /*color: #CC9393;*/
-    color: #9f3939;
-    /*text-decoration: line-through;*/
-      position: relative;
 
+
+.strike {
+    color: #9f3939;
+    position: relative;
 }
 
 .strike:before {
@@ -40,4 +46,26 @@
   border-top: 3px solid red;
 
   transform:rotate(-10deg);
+}
+
+.reveal .img-bg {
+    box-shadow: none;
+    margin: 0;
+    border: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-height: inherit;
+    max-width: inherit;
+
+    z-index: 1;
+}
+
+.reveal .heirarchy-text {
+    position: relative;
+    z-index: 2;
+
+    margin-left: 40%;
+    text-align: left;
+
 }
