@@ -84,25 +84,23 @@ loudLarry.greet(); // HI MY NAME IS LARRY!!!
                 <section>
                     <section>
                     <div class="text-left">
-                        <h3>Classical Ineritance</h3>
+
+                    <h2>Types Of Inheritance</h2>
+                        <h3>Subtyping Ineritance (Classical)</h3>
                         <ul>
                             <li class="fragment" data-fragment-index="0">Instances inherit from and are <em>tightly coupled</em> to a single blueprint (the class)</li>
-                            <li class="fragment" data-fragment-index="1">Classes are intended to be <em>immutable</em> at runtime</li>
-                            <li class="fragment" data-fragment-index="2"><em>Always</em> creates class hierarchies as a side-effect of sub-class creation</li>
+                            <li class="fragment" data-fragment-index="1">Creates X <em>is a</em> Y relationships</li>
+                            <li class="fragment" data-fragment-index="2">Creates class hierarchies as a side-effect of sub-class creation</li>
                         </ul>
                         <br>
                         <br>
-                        <h3>Prototypal Inheritance</h3>
+                        <h3>Implementation Inheritance (Prototypal)</h3>
                         <ul>
-                            <li class="fragment" data-fragment-index="0">Instances inherit from a single instance</li>
-                            <li class="fragment" data-fragment-index="1">Prototypes are intended to be <em>mutable</em> at runtime</li>
-                            <li class="fragment" data-fragment-index="2">Can but <em>does not have to</em> create heirarchies</li>
+                            <li class="fragment" data-fragment-index="0">Instances inherit from other instances</li>
+                            <li class="fragment" data-fragment-index="1">Creates X <em>can do</em> Y relationships</li>
                         </ul>
                     </div>
                     </section>
-     <!--                <section>
-                        <h2>Clear up confusion between Classical and Prototypal Inheritance in js</h2>
-                    </section> -->
                 </section>
 
                 <section>
@@ -183,7 +181,7 @@ var foo = Foo();
                 </section> -->
 
                 <section>
-                    <h2>Js does not actually have <br>classical inheritance</h2>
+                    <h2>Js <em>does not</em> actually have <br>classical inheritance</h2>
                     <div class="text-left">
                         <p class="fragment">But ES6 Has the <code>class</code> keyword…</p>
                             <div class="fragment">
