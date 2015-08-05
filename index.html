@@ -108,6 +108,39 @@ loudLarry.greet(); // HI MY NAME IS LARRY!!!
                 </section>
 
                 <section>
+                    <section>
+                        <h2>X <em>is a</em> Y</h2>
+                        <div class="text-left">
+                            <p>In JS object types and definitions <em>can change</em> at any time.</p>
+                            <ul>
+                                <li><p>Using the <code>instanceof</code> keyword to make assumptions about an object is <em>unreliable</em></p></li>
+                                <li><p>There are many <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof">cases (MDN instanceof docs)</a> where it does not work anyway</p></li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Change Your Thinking</h2>
+                        <p>Inspect the actual object.</p>
+                        <div style="width: 45%; float: left">
+                            <p>X <em>can do</em> Y</p>
+                            <pre><code data-trim class="javascript">
+if(obj.connect && obj.sync){
+    // can connect and sync
+}
+                             </code></pre>
+                        </div>
+                        <div style="width: 45%; float: right">
+                            <p>X <em>has a</em> Y</p>
+                            <pre><code data-trim class="javascript">
+if(obj.collection){
+    // has a collection
+}
+                             </code></pre>
+                        </div>
+                    </section>
+                </section>
+
+                <section>
                     <img src="img/tree.png" class="img-bg" width="800"/>
                     <img src="img/tree-2.png" class="img-bg fragment" width="800" data-fragment-index="1" />
                     <img src="img/tree-3.png" class="img-bg fragment" width="800" data-fragment-index="2" />
@@ -123,7 +156,7 @@ loudLarry.greet(); // HI MY NAME IS LARRY!!!
                 <section>
                     <h2>All or Nothing</h2>
 
-                    <p>You must inherit the whole class</p>
+                    <p>You must inherit the whole class.</p>
                     <blockquote class="text-left">
                         &ldquo;The problem with object-oriented languages is they’ve got all this implicit environment that they carry around with them. You wanted a banana but what you got was a gorilla holding the banana and the entire jungle.&rdquo;
                         <div class="text-right">
@@ -164,24 +197,10 @@ var foo = Foo();
                     </section>
                 </section> -->
 
-               <!--  <section>
-                    <h2>The <code>instanceof</code> Keyword</h2>
 
-                    <div class="text-left">
-                        <p>In js object types and definitions are <em>not strictly enforced</em></p>
-                        <p class="fragment">making <code>instanceof</code> <em>unreliable</em> <span class="fragment">and a <em class="h2">Liar!</em></p>
-
-
-                        <p class="fragment">
-                            <small>
-                            * <strong>Seriously</strong> See the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof">MDN instanceof docs</a> for the extent of the lies
-                            </small>
-                        </p>
-                    </div>
-                </section> -->
 
                 <section>
-                    <h2>Js <em>does not</em> actually have <br>classical inheritance</h2>
+                    <h2>JS <em>does not</em> actually have <br>classical inheritance</h2>
                     <div class="text-left">
                         <p class="fragment">But ES6 Has the <code>class</code> keyword…</p>
                             <div class="fragment">
@@ -202,7 +221,7 @@ var foo = Foo();
                         <br>
                         <div class="fragment">
                         <ul>
-                            <li>Js has <em>no limitations</em> when creating objects at runtime.</li>
+                            <li>JS has <em>no limitations</em> when creating objects at runtime.</li>
                             <li>You do not have to use <code>new</code> or a <em>constructor</em>.</li>
                         </ul>
                         </div>
@@ -212,7 +231,7 @@ var foo = Foo();
                 <section>
                     <h2>Classes vs Factories</h2>
                     <div class="text-left">
-                        <p class="fragment">Classes (in ES5 and ES6) <em>do not give you ANYTHING</em> that is not <em>already supplied</em> by factory functions and the prototypal OO built into js.</p>
+                        <p class="fragment">Classes (in ES5 and ES6) <em>do not give you ANYTHING</em> that is not <em>already supplied</em> by factory functions and the prototypal OO built into JS.</p>
                         <p class="fragment">When you create a class you are opting into a <em>less powerful</em>, <em>less flexible</em> mechanism than a simple factory.</p>
                     </div>
                 </section>
@@ -291,9 +310,11 @@ var foo = new Foo();
 foo.someFunc(); // behavior needs to be changed
                         </code></pre>
                         <div class="text-left">
+                            <img src="img/tree-3.png" width="300" class="img-left" />
                             <p>The behavior of <em>foo.someFunc()</em> needs to be changed,
                             but multiple sub-classes depend on the current behavior of <em>Foo.prototype.someFunc()</em></p>
                             <br>
+
                             <h3 class="fragment">
                                 Who thinks they have a solid solution to this?
                             </h3>
