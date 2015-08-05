@@ -62,8 +62,7 @@ steve.greet(); // Hi my name is Steve
 
                     <section>
                         <p>Then extended it</p>
-                        <pre>
-                            <code data-trim>
+                        <pre><code data-trim class="javascript">
 var LoudUser = function LoudUser(name, volume){
     User.prototype.constructor.call(this, name);
     this.volume = volume;
@@ -78,25 +77,32 @@ LoudUser.prototype = {
 
 var loudLarry = new LoudUser('Larry', 3);
 loudLarry.greet(); // HI MY NAME IS LARRY!!!
-                            </code>
-                        </pre>
+                            </code></pre>
                     </section>
                 </section>
 
                 <section>
-                    <h2>Class vs Prototype</h2>
+                    <section>
                     <div class="text-left">
-                        <h3>Classes</h3>
-
+                        <h3>Classical Ineritance</h3>
                         <ul>
-                            <li>Always create class hierarchies as a side-effect of sub-class creation</li>
+                            <li class="fragment" data-fragment-index="0">Instances inherit from and are <em>tightly coupled</em> to a single blueprint (the class)</li>
+                            <li class="fragment" data-fragment-index="1">Classes are intended to be <em>immutable</em> at runtime</li>
+                            <li class="fragment" data-fragment-index="2"><em>Always</em> creates class hierarchies as a side-effect of sub-class creation</li>
                         </ul>
-                        <br><br>
-                        <h3>Prototypes</h3>
+                        <br>
+                        <br>
+                        <h3>Prototypal Inheritance</h3>
                         <ul>
-                            <li>Do not have to do that</li>
+                            <li class="fragment" data-fragment-index="0">Instances inherit from a single instance</li>
+                            <li class="fragment" data-fragment-index="1">Prototypes are intended to be <em>mutable</em> at runtime</li>
+                            <li class="fragment" data-fragment-index="2">Can but <em>does not have to</em> create heirarchies</li>
                         </ul>
                     </div>
+                    </section>
+                    <section>
+                        <h2>Clear up confusion between Classical and Prototypal Inheritance in js</h2>
+                    </section>
                 </section>
 
                 <section>
@@ -104,8 +110,6 @@ loudLarry.greet(); // HI MY NAME IS LARRY!!!
                 </section>
 
                 <section>
-
-
                     <img src="img/tree.png" class="img-bg" width="800"/>
                     <img src="img/tree-2.png" class="img-bg fragment" width="800" data-fragment-index="1" />
                     <img src="img/tree-3.png" class="img-bg fragment" width="800" data-fragment-index="2" />
@@ -118,11 +122,10 @@ loudLarry.greet(); // HI MY NAME IS LARRY!!!
                     </div>
                 </section>
 
-
                 <section>
                     <h2>All or Nothing</h2>
 
-                    <p>You must enherit the whole class</p>
+                    <p>You must inherit the whole class</p>
                     <blockquote class="text-left">
                         &ldquo;The problem with object-oriented languages is they’ve got all this implicit environment that they carry around with them. You wanted a banana but what you got was a gorilla holding the banana and the entire jungle.&rdquo;
                         <div class="text-right">
@@ -134,7 +137,7 @@ loudLarry.greet(); // HI MY NAME IS LARRY!!!
 
                 <!-- <section>
                     <section>
-                        <h2>The <em class="highlight">new</em> Keyword</h2>
+                        <h2>The <em>new</em> Keyword</h2>
 
                         <p class="text-left">Does the `new` keyword mean that the code is using classical inheritance?</p>
                         <h3 style="color: red" class="fragment">
@@ -144,9 +147,9 @@ loudLarry.greet(); // HI MY NAME IS LARRY!!!
                     </section>
 
                     <section>
-                        <h2>Problems with the <em class="highlight">new</em> Keyword</h2>
+                        <h2>Problems with the <em>new</em> Keyword</h2>
                         <p>Inconsistent object creation</p>
-                        <pre class="fragment"><code data-trim>
+                        <pre class="fragment"><code data-trim class="javascript">
 // just do
 var foo = new Foo();
 
@@ -163,13 +166,13 @@ var foo = Foo();
                     </section>
                 </section> -->
 
-                <section>
-                    <h2>The <em class="highlight">instanceof</em> Keyword</h2>
+               <!--  <section>
+                    <h2>The <code>instanceof</code> Keyword</h2>
 
                     <div class="text-left">
-                        <p>In js object types and definitions are not strictly enforced</p>
-                        <p class="fragment">Making <em class="highlight">instanceof</em> Much less useful</p>
-                        <h2 class="fragment">And a Liar!</h2>
+                        <p>In js object types and definitions are <em>not strictly enforced</em></p>
+                        <p class="fragment">making <code>instanceof</code> <em>unreliable</em> <span class="fragment">and a <em class="h2">Liar!</em></p>
+
 
                         <p class="fragment">
                             <small>
@@ -177,15 +180,15 @@ var foo = Foo();
                             </small>
                         </p>
                     </div>
-                </section>
+                </section> -->
 
                 <section>
                     <h2>Js does not actually have <br>classical inheritance</h2>
                     <div class="text-left">
-                        <p class="fragment">But ES6 Has the <em class="highlight">class</em> keyword…</p>
+                        <p class="fragment">But ES6 Has the <code>class</code> keyword…</p>
                             <div class="fragment">
-                                <p class="text-right">... <em class="highlight">Not really</em> an implementation of classical OOP</p>
-                                <p class="fragment">ES6 class implementation still has some <a href="https://medium.com/javascript-scene/how-to-fix-the-es6-class-keyword-2d42bb3f4caf">problems</a></p>
+                                <p class="text-right">... <em>Not really</em> an implementation of classical OOP</p>
+                                <p class="fragment">The ES6 <code>class</code> implementation still has some <a href="https://medium.com/javascript-scene/how-to-fix-the-es6-class-keyword-2d42bb3f4caf">problems</a></p>
                         </div>
                     </div>
                 </section>
@@ -195,33 +198,51 @@ var foo = Foo();
                 </section>
 
                 <section data-transition="zoom-in slide-out" data-background="img/explosion.gif">
-                    <h2><em class="highlight">Factories</em></h2>
+                    <h2>Factories</h2>
                     <div class="text-left">
-                        <p>Any function can instantiate and return objects. When you do so without a constructor, it’s called a factory function.</p>
-
+                        <p>Any function can instantiate and return objects. <span class="fragment"> When you do so without a constructor, it is called a <em>factory function</em>.</span></p>
                         <br>
                         <div class="fragment">
                         <ul>
-                            <li>Js has <em class="highlight">no limitations</em> when creating objects at runtime.</li>
-                            <li>You do not have to use <em class="highlight">new</em> or a <em class="highlight">constructor</em>.</li>
+                            <li>Js has <em>no limitations</em> when creating objects at runtime.</li>
+                            <li>You do not have to use <code>new</code> or a <em>constructor</em>.</li>
                         </ul>
                         </div>
                     </div>
                 </section>
 
                 <section>
-                    <h2>Factories</h2>
+                    <h2>Classes vs Factories</h2>
                     <div class="text-left">
-                        <p class="fragment">Classes (in ES5 and ES6) <em class="highlight">do not give you ANYTHING</em> that is not <em class="highlight">already supplied</em> by factory functions and the prototypal OO built into js.</p>
-                        <p class="fragment">When you create a class you are opting into a <em class="highlight">less powerful</em>, <em class="highlight">less flexible</em> mechanism than a simple factory.</p>
+                        <p class="fragment">Classes (in ES5 and ES6) <em>do not give you ANYTHING</em> that is not <em>already supplied</em> by factory functions and the prototypal OO built into js.</p>
+                        <p class="fragment">When you create a class you are opting into a <em>less powerful</em>, <em>less flexible</em> mechanism than a simple factory.</p>
                     </div>
                 </section>
 
                 <section>
-                <section>
-                    <h2>Composable Factory</h2>
-                    <p><small>AKA functional mixins</small></p>
-                    <pre><code data-trim>
+                    <section>
+                        <h2>Lets See Some Code</h2>
+                    </section>
+                    <section>
+                        <h2>Concatenative Inheritance</h2>
+                        <pre><code data-trim class="javascript">
+// player game object example
+var movementTrait = {
+  move: function(distance){ }
+};
+
+var solidTrait = {
+  collide: function(object){ }
+};
+
+var player = _.assign({}, movementTrait, solidTrait); // same as Object.assign() or _.extend
+                        </code></pre>
+
+                    </section>
+                    <section>
+                        <h2>Composable Factory</h2>
+                        <p><small>AKA functional mixins</small></p>
+                        <pre><code data-trim class="javascript">
 // simple example factory
 var thingFactory = function(obj, settings){
     obj = obj || {};
@@ -238,12 +259,12 @@ var thingFactory = function(obj, settings){
     return obj;
 };
 var a = thingFactory();
-                    </code></pre>
-                    <h4>This is the <span class="strike">Only</span> <span class="strike">Best</span> <em class="highlight">Simplest</em> way to do this.</h4>
+                        </code></pre>
+                        <h4>This is the <span class="strike">Only</span> <span class="strike">Best</span> <em>Simplest</em> way to do this.</h4>
                     </section>
                     <section>
                         <h2>Composing Factories</h2>
-                        <pre><code data-trim>
+                        <pre><code data-trim class="javascript">
 // object instance factory, NOT intended to be composed
 // DO NOT USE in other factories to avoid nested dependencies
 // I prefix these functions with `make` to denote this
@@ -267,13 +288,13 @@ var foo = makeFoo({
                 <section>
                     <section>
                         <h2>Example Problem: Class</h2>
-                        <pre><code data-trim>
+                        <pre><code data-trim class="javascript">
 var foo = new Foo();
 foo.someFunc(); // behavior needs to be changed
                         </code></pre>
                         <div class="text-left">
-                            <p>The behavior of <em class="highlight">foo.someFunc()</em> needs to be changed,
-                            But multiple sub-classes depend on the current behavior of <em class="highlight">Foo.prototype.someFunc()</em></p>
+                            <p>The behavior of <em>foo.someFunc()</em> needs to be changed,
+                            but multiple sub-classes depend on the current behavior of <em>Foo.prototype.someFunc()</em></p>
                             <br>
                             <h3 class="fragment">
                                 Who thinks they have a solid solution to this?
@@ -282,7 +303,7 @@ foo.someFunc(); // behavior needs to be changed
                     </section>
                     <section>
                         <h2>Example Problem: Factory</h2>
-                        <pre><code data-trim>
+                        <pre><code data-trim class="javascript">
 var makeFoo = function(settings){
     var obj = {};
     obj = thingFactory(obj, settings);
@@ -293,17 +314,17 @@ var makeFoo = function(settings){
 var foo = makeFoo();
 foo.someFunc(); // behavior needs to be changed
                         </code></pre>
-                        <p class="text-left">The behavior of <em class="highlight">foo.someFunc()</em> needs to be changed,
-                        But other objects depend on the current behavior of <em class="highlight">someFunc()</em> provided by the <em class="highlight">otherFactory()</em></p>
+                        <p class="text-left">The behavior of <em>foo.someFunc()</em> needs to be changed,
+                        but other objects depend on the current behavior of <em>someFunc()</em> provided by the <em>otherFactory()</em></p>
                         <br>
                         <h3 class="fragment">
                             Who thinks they have a solid solution to this?
-                        </h3>
+                    </h3>
                     </section>
 
                     <section>
                         <h2>Factory Solutions</h2>
-                        <pre class="fragment"><code data-trim>
+                        <pre class="fragment"><code data-trim class="javascript">
 var makeFoo = function(settings){
     var obj = {};
     obj = thingFactory(obj, settings);
@@ -313,7 +334,7 @@ var makeFoo = function(settings){
 };
 
                         </code></pre>
-                        <pre class="fragment"><code data-trim>
+                        <pre class="fragment"><code data-trim class="javascript">
 var makeFoo = function(settings){
     var obj = {};
     obj = thingFactory(obj, settings);
@@ -325,6 +346,138 @@ var makeFoo = function(settings){
                         </code></pre>
                     </section>
                 </section>
+                <section>
+                    <section>
+                        <h2>Composable object factories</h2>
+                        <img src="img/stampit-logo.png" class="img-padded" />
+
+                        <p>
+                            <a href="https://github.com/stampit-org/stampit">https://github.com/stampit-org/stampit</a>
+                        </p>
+                    </section>
+                    <section>
+                        <h3>Bar Example: Requirements</h3>
+                        <pre><code data-trim class="javascript">
+var defaults = {
+    name: 'my bar',
+    specials: 'todays specials',
+    location: {lat: null, lng: null}
+};
+                        </code></pre>
+
+                        <pre><code data-trim class="javascript">
+var members = {
+    add: function(member) {
+        this.members[member.name] = member;
+    },
+    getMember: function(name) {
+        return this.members[name];
+    },
+    members: {} // new obj per instance
+};
+                        </code></pre>
+                        <pre><code data-trim class="javascript">
+var availability = {
+    close: function(){ /* close bar */},
+    open: function(){ /* open bar */},
+    isOpen: fucntion() { /* check if bar is open */ }
+}; // handle internal availability status privately
+
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h3>Bar Example: Defaults</h3>
+                        <pre><code data-trim class="javascript">
+var defaultsStamp = stampit().props({
+    name: 'The Bar',
+    specials: 'Vodka with Vodka',
+    location: { lat: null, lng: null }
+});
+
+var myDefaults = defaultsStamp({
+    name: 'Moes Bar',
+    location: {
+        lat: 1.5,
+        lng: 2.3
+    }
+});
+myDefaults.name; // 'Moes Bar'
+myDefaults.specials; // 'Vodka with Vodka'
+myDefaults.location; // { lat: 1.5, lng: 2.3 }
+
+var d1 = defaultStamp();
+var d2 = defaultStamp();
+d1.location === d2.location // false
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h3>Bar Example: Membership</h3>
+                        <pre><code data-trim class="javascript">
+var membershipStamp = stampit({
+    methods: {
+        add: function(member) {
+            this.members[member.name] = member;
+        },
+        getMember: function(name) {
+            return this.members[name];
+        }
+    },
+    props: {
+        members: {}
+    }
+});
+
+var myMembership = membershipStamp();
+myMembership.add({name: 'Homer', status: 'sober'});
+myMembership.getMember('Homer'); // {name: 'Homer', status: 'sober'}
+
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h3>Bar Example: Availability</h3>
+                        <pre><code data-trim class="javascript">
+var availabilityStamp = stampit().init(function(settings) {
+    var instance = settings.instance;
+    var isOpen = false; // private
+    instance.open = function() {
+        isOpen = true;
+    };
+    instance.close = function() {
+        isOpen = false;
+    };
+    instance.isOpen = function() {
+        return isOpen;
+    };
+});
+
+var myAvailability = availabilityStamp();
+myAvailability.isOpen(); // false
+myAvailability.open();
+myAvailability.isOpen(); // true
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h3>Bar Example: Conclusion</h3>
+                        <pre><code data-trim class="javascript">
+// compose multiple stamps into one
+var bar = stampit.compose(defaults, availability, membership);
+
+// you can override references on instantiation
+var myBar = bar({name: 'Moes Bar'});
+
+myBar.name; // 'Moes Bar'
+myBar.add({name: 'Homer', status: 'sober'});
+myBar.open();
+myBar.isOpen(); // true
+myBar.getMember('Homer'); // {name: 'Homer', status: 'sober'}
+                        </code></pre>
+                    </section>
+                </section>
+
 			</div>
 		</div>
 

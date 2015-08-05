@@ -1,22 +1,18 @@
 
-.reveal .highlight,
-.reveal .text-green {
-    color: #7F9F7F;
-}
-
 .text-left {
     text-align: left;
 }
-
 .text-right {
     text-align: right;
 }
 
-.reveal blockquote {
-    padding: 0.25em 0.5em;
-    width: 100%;
+.reveal .highlight,
+.reveal .text-green {
+    color: #7F9F7F;
 }
-
+.reveal .text-blue {
+    color: #64A9B9;
+}
 .reveal .text-red {
     color: #9F3939;
 }
@@ -27,10 +23,27 @@
     color: #777;
 }
 
+.reveal blockquote {
+    padding: 0.25em 0.5em;
+    width: 100%;
+}
+
+.reveal em {
+    color: #7F9F7F;
+}
+
+.reveal code {
+    color: #64A9B9;
+    font-weight: normal;
+}
+
+.reveal pre code {
+    max-height: inherit;
+}
+
 .reveal pre {
     width: 98%;
 }
-
 
 .strike {
     color: #9f3939;
@@ -67,5 +80,9 @@
 
     margin-left: 40%;
     text-align: left;
+}
 
+.reveal .img-padded {
+    padding: 20px;
+    background: #fff;
 }
